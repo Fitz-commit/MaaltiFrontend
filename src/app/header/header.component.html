@@ -1,16 +1,15 @@
-<header>
+<header class="p-3">
     <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center">
+        <div class="d-flex flex-wrap align-items-center justify-content-center ">
             <h1 class="nav col-12 col-lg-auto justify-content-center me-lg-auto mb-md-0 mb-2">{{title}}</h1>
             <div class="col-12 col-lg-auto me-lg-2 mb-3 mb-lg-0 me-lg-3">
-                <input type="text" class="form-control" id="searchbar" placeholder="Search...">
+                <input type="text" class="form-control" id="searchbar" placeholder="Suche...">
             </div>
-            <div class="text-end">
-                <button type="button" class="btn btn-dark me-2">Search</button>
-            </div>
-            <div class="col-12 text-end">
-                
-            </div>
+            
+            <app-button id="searchbtn" text="Suche" klasse="btn-outline-light"></app-button>
+            <app-button id="loginbtn" text="Anmelden" klasse="btn-outline-light"></app-button>
+            <app-button id="profilbtn" text="Profil" klasse="btn-secondary"></app-button>
+            
         </div>
     </div>
 </header>
