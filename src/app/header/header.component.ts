@@ -11,11 +11,21 @@ export class HeaderComponent implements OnInit {
 
   title:string = "Maalti"
 
-  
-
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  searchYoutuber(){
+    console.log('test')
+  }
+
+  login(){
+
+  }
+
+  profil(){
+    
   }
 
 }
