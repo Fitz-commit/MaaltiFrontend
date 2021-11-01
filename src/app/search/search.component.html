@@ -1,4 +1,8 @@
 <div class="container">
 
     <h1>Platzhalter</h1>
+
+    <div *ngFor="let previews of previews; index as i">
+        Task Nr. {{ i+1 }}: {{ previews.name }}
+    </div>
 </div>

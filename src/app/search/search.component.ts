@@ -8,12 +8,12 @@ import { Service } from '../data/service';
 })
 export class SearchComponent implements OnInit {
 
-
+  previews:any = this.service.youtuberpreview;
 
   constructor(private service:Service) { }
 
   ngOnInit(): void {
-    this.service.youtuberpreview
+   
   }
 
  
