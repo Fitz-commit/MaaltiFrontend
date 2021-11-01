@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 
 import { FormsModule } from '@angular/forms';
 import { Service } from './data/service';
+import { SearchComponent } from './search/search.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,10 +25,12 @@ import { Service } from './data/service';
     LoginComponent,
     ProfilComponent,
     HomeComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [Service],

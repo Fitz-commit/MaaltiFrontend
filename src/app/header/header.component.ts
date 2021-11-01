@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Service } from '../data/service';
 
@@ -11,10 +11,11 @@ import { Service } from '../data/service';
 export class HeaderComponent implements OnInit {
 
   title:string = "Maalti";
-  search = '';
-  private service!: Service;
+  search = "";
+  
 
-  constructor() { }
+
+  constructor(private service:Service) { }
 
 
   ngOnInit(): void {
@@ -27,11 +28,14 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  getYoutuber(){
-    this.service.searchYoutuber(this.search).subscribe(
-      response => {console.log(response)}
-    )
+  sendName(){
+    this.service.searchYoutuber(this.search)
   }
+
+  
+
+  
+
 
   
 }

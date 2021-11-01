@@ -6,7 +6,7 @@
                 <input type="text" class="form-control" placeholder="Suche..." [(ngModel)]="search" >
             </div>
             
-            <app-button id="searchbtn" text="Suche" klasse="btn-outline-light" (btnClick) = "getYoutuber()" ></app-button>
+            <app-button [routerLink]="'/Search'" id="searchbtn" text="Suche" klasse="btn-outline-light" (btnClick) = "sendName()"></app-button>
             <app-button [routerLink]="'/Login'" text="Anmelden" id="loginbtn" klasse="btn-outline-light" ></app-button>
             <app-button id="profilbtn" text="Profil" klasse="btn-secondary" (btnClick) = "getProfil()" ></app-button>
             

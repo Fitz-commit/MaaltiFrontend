@@ -9,11 +9,15 @@ const httpOptions = {
 
 @Injectable()
 export class Service {
+    youtuberpreview:any;
 
     constructor(private http: HttpClient) { }
 
-    searchYoutuber(name:string){
-        return this.http.get('http:///https://maalti.herokuapp.com/api/v1.0/searchlistname?name=' + name);
+    async searchYoutuber(name:string){
+        
+        var apiURL = "https://maalti.herokuapp.com/api/v1.0/searchlistname?name=" + name
+        const response = await fetch(apiURL)
+        this.youtuberpreview = await response.json()
     }
 
     
