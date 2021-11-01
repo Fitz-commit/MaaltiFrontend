@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,19 +13,19 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit(): void {
   }
 
-  searchYoutuber(){
-    console.log('test')
+  getProfil(){
+    if(document.cookie == ""){
+      alert('Sie sind nicht eingeloggt!')
+      return
+    }
+
+
+
   }
 
-  login(){
-
-  }
-
-  profil(){
-    
-  }
 
 }

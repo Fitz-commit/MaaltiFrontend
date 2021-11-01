@@ -6,9 +6,9 @@
                 <input type="text" class="form-control" id="searchbar" placeholder="Suche...">
             </div>
             
-            <app-button id="searchbtn" text="Suche" klasse="btn-outline-light" (btnClick) = "searchYoutuber()"></app-button>
-            <app-button id="loginbtn" text="Anmelden" klasse="btn-outline-light" (btnClick) = "login()"></app-button>
-            <app-button id="profilbtn" text="Profil" klasse="btn-secondary" (btnClick) = "profil()"></app-button>
+            <app-button id="searchbtn" text="Suche" klasse="btn-outline-light" ></app-button>
+            <app-button [routerLink]="'/Login'" id="loginbtn" klasse="btn-outline-light" ></app-button>
+            <app-button id="profilbtn" text="Profil" klasse="btn-secondary" (btnClick) = "getProfil()" ></app-button>
             
         </div>
     </div>
