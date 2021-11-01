@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Service } from '../data/service';
 
 
 @Component({
@@ -9,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  title:string = "Maalti"
+  title:string = "Maalti";
+  search = '';
+  private service!: Service;
 
   constructor() { }
 
@@ -22,10 +25,13 @@ export class HeaderComponent implements OnInit {
       alert('Sie sind nicht eingeloggt!')
       return
     }
-
-
-
   }
 
+  getYoutuber(){
+    this.service.searchYoutuber(this.search).subscribe(
+      response => {console.log(response)}
+    )
+  }
 
+  
 }
