@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   title:string = "Maalti";
   search = "";
   
+  
 
 
   constructor(private service:Service) { }

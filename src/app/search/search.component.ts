@@ -8,12 +8,18 @@ import { Service } from '../data/service';
 })
 export class SearchComponent implements OnInit {
 
-  previews:any = this.service.youtuberpreview;
+  previews:any;
 
   constructor(private service:Service) { }
 
   ngOnInit(): void {
-   
+    this.previews = this.service.youtuberpreview;
+
+  }
+
+  generateYTProfil(id:string){
+    var URL= "https://maalti.herokuapp.com/api/v1.0/channellistid?id=" + id
+    console.log(URL)
   }
 
  
