@@ -11,6 +11,7 @@ const httpOptions = {
 @Injectable()
 export class Service {
     youtuberpreview:any;
+    
 
     constructor(private http: HttpClient, private router: Router) { }
 
@@ -22,7 +23,7 @@ export class Service {
         
         const response = await fetch(apiURL)
         this.youtuberpreview = await response.json()
-        console.log(this.youtuberpreview)
+        
         
         this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
         this.router.navigate(['Search']));
@@ -45,7 +46,6 @@ export class Service {
         }else{
             alert("Die Registrierung konnte nicht abgschlossen werden.")
         }
-        console.log(content)
         
     }
 
@@ -67,10 +67,25 @@ export class Service {
             return;
         }
 
-        document.cookie= ""+ email +"="+cookie;
+        document.cookie=  "="+cookie;
         alert("Sie sind eingeloggt")
         this.router.navigate(['']);
         
+        
+    }
+
+    async logoutUser(cookie: string){
+    
+        var apiURL = "https://maalti.herokuapp.com/api/v1.0/logout?email="+cookie;
+        const rawResponse = await fetch(apiURL);
+        
+        var response = await rawResponse.json();
+       
+        if(response == true){
+            alert("Deine Passwort wird zurückgesetzt. Wir melden uns bei dir.")
+        }else{
+            alert("Email wurde nicht gefunden. Überprüfe deine Angaben erneut.")
+        }
         
     }
 
@@ -80,13 +95,23 @@ export class Service {
         const rawResponse = await fetch(apiURL);
         
         var response = await rawResponse.json();
-        console.log(response)
+       
         if(response == true){
             alert("Deine Passwort wird zurückgesetzt. Wir melden uns bei dir.")
         }else{
             alert("Email wurde nicht gefunden. Überprüfe deine Angaben erneut.")
         }
         
+        
+    }
+
+     async getYTProfil(apiURL: string){
+    
+    
+        const rawResponse = await fetch(apiURL);
+        
+        var response = await rawResponse.json();
+        console.log(response)
         
     }
 

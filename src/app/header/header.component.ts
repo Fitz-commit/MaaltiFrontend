@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   title:string = "Maalti";
   search = "";
+  loginbtn ="";
   
   
 
@@ -20,6 +21,12 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(): void {
+    if(document.cookie == ""){
+      this.loginbtn = "Anmelden"
+    }
+    if(document.cookie != ""){
+      this.loginbtn = "Abmelden"
+    }
   }
 
   getProfil(){

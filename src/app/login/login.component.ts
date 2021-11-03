@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Service } from '../data/service';
 
 @Component({
@@ -13,10 +14,16 @@ export class LoginComponent implements OnInit {
 
   lemail="";
   lpassword="";
+  
 
-  constructor(private service:Service) { }
+  constructor(private service:Service, private router:Router) { }
 
   ngOnInit(): void {
+    if(document.cookie != ""){
+      this.ausloggen()
+
+    }
+    
   }
 
   registrieren(){
@@ -31,6 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
   einloggen(){
+
     if(this.lemail =="" || this.lpassword==""){
       alert("Bitte Daten eingeben! ")
       return;
@@ -39,6 +47,11 @@ export class LoginComponent implements OnInit {
     this.service.loginUser(this.lemail,this.lpassword)
     this.lemail="";
     this.lpassword="";
+
+  }
+
+  ausloggen(){
+  
 
   }
 

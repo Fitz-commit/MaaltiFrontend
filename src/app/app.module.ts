@@ -15,6 +15,7 @@ import { Service } from './data/service';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PwforgottenComponent } from './pwforgotten/pwforgotten.component';
+import { YtprofilComponent } from './ytprofil/ytprofil.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { PwforgottenComponent } from './pwforgotten/pwforgotten.component';
     HomeComponent,
     SearchComponent,
     PwforgottenComponent,
+    YtprofilComponent,
   ],
   imports: [
     BrowserModule,
