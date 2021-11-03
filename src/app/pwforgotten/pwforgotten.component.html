@@ -1,1 +1,26 @@
-<p>pwforgotten works!</p>
+<div class="container">
+
+    <div class="text-center mt-3">
+        <h1>Passwort vergessen?</h1>
+        <h4 class="text-muted">Kein Problem!</h4>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="row row-cols-sm-1 row-cols-md-2 my-5">
+            <div class="col">
+                <div class="card mb-3" style="width: 20rem;">
+                    <div class="card-body d-flex row mx-3 justify-content-center">
+                        <h5 class="card-title">Passwort zurücksetzten </h5>
+                        <p class="card-text text-muted">Gib deine Email an und wir setzten dein Passwort zurück!</p>
+                        <input id="email" type="email" name="login" placeholder="E-Mail" class="my-2"
+                            [(ngModel)]="email">
+                        
+                        <button type="button" class="btn btn-dark mt-3" (click)="pwvergessen()"> Weiter</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

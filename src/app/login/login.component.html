@@ -14,7 +14,7 @@
                         <input id="email" type="email" name="login" placeholder="E-Mail" class="my-2" [(ngModel)]="lemail">
                         <input id="password" type="password" name="password" placeholder="Passwort" class="my-2" [(ngModel)]="lpassword">
                         <p class="card-text">Meld dich hier an falls du schon einen Maalti-Account besitzt</p>
-                        <a href="#" class="card-link">Passwort vergessen?</a><br>
+                        <a [routerLink]="['/Password']" class="card-link">Passwort vergessen?</a><br>
                         <button type="button" class="btn btn-dark mt-3 " (click)="einloggen()"> Anmelden</button>
                     </div>
                 </div>

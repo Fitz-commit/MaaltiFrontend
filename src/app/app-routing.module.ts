@@ -4,12 +4,14 @@ import { LoginComponent } from './login/login.component';
 import { SearchComponent } from './search/search.component';
 import { ProfilComponent } from './profil/profil.component';
 import { HomeComponent } from './home/home.component';
+import { PwforgottenComponent } from './pwforgotten/pwforgotten.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: 'Login', component: LoginComponent},
   { path: 'Search', component: SearchComponent},
   { path: 'Profil', component: ProfilComponent},
+  { path: 'Password', component: PwforgottenComponent},
   { path: '', component: HomeComponent},
 ];
 

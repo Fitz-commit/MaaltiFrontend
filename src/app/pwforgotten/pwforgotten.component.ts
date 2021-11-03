@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Service } from '../data/service';
 
 @Component({
   selector: 'app-pwforgotten',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pwforgotten.component.css']
 })
 export class PwforgottenComponent implements OnInit {
+  email=""
 
-  constructor() { }
+  constructor(private service:Service) { }
 
   ngOnInit(): void {
   }
 
+  pwvergessen(){
+    this.service.pwforgotten(this.email)
+    this.email =""
+  }
 }

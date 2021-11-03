@@ -17,10 +17,12 @@ export class Service {
     async searchYoutuber(name:string){
         
         var apiURL = "https://maalti.herokuapp.com/api/v1.0/searchlistname?name=" + name
+        
 
         
         const response = await fetch(apiURL)
         this.youtuberpreview = await response.json()
+        console.log(this.youtuberpreview)
         
         this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
         this.router.navigate(['Search']));
@@ -68,6 +70,22 @@ export class Service {
         document.cookie= ""+ email +"="+cookie;
         alert("Sie sind eingeloggt")
         this.router.navigate(['']);
+        
+        
+    }
+
+    async pwforgotten(email: string){
+    
+        var apiURL = "https://maalti.herokuapp.com/api/v1.0/user/pwforgotten?email="+email;
+        const rawResponse = await fetch(apiURL);
+        
+        var response = await rawResponse.json();
+        console.log(response)
+        if(response == true){
+            alert("Deine Passwort wird zurückgesetzt. Wir melden uns bei dir.")
+        }else{
+            alert("Email wurde nicht gefunden. Überprüfe deine Angaben erneut.")
+        }
         
         
     }
