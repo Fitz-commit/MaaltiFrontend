@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { Service } from './data/service';
 import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PwforgottenComponent } from './pwforgotten/pwforgotten.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     ProfilComponent,
     HomeComponent,
     SearchComponent,
+    PwforgottenComponent,
   ],
   imports: [
     BrowserModule,
