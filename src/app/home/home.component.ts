@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   search = "";
+  itemImageUrl: any ='../assets/img/milky-way-g21700d2ed_1920.jpg';
 
   constructor() { }
 

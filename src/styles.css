@@ -1,2 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+.btn-abc{
+    background-color: #9151ff;
+    
+}
+.container{
+    font-family: "Montserrat";
 
+    
+}
+
+header{
+    background-color: #120f1d;
+    
+}
+
+header h1{
+    color: #9151ff ;
+}
+
+.btn{
+    color: white;
+}
+
+footer{
+    width: 100%;
+    bottom: 0;
+    background-color: #120f1d;
+    font-family: "Montserrat";
+    color: white;
+    
+}
