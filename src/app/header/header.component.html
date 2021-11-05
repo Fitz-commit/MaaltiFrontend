@@ -7,7 +7,7 @@
             </div>
             
             <app-button id="searchbtn" text="Suche" klasse="btn-outline-light" (btnClick) = "sendName()"></app-button>
-            <app-button [routerLink]="'/Login'" text="{{loginbtn}}" id="loginbtn" klasse="btn-outline-light" ></app-button>
+            <app-button [routerLink]="'/Login'" text="Ab-/Anmelden" id="loginbtn" klasse="btn-outline-light" (btnClick) = "loginlogout()" ></app-button>
             <app-button id="profilbtn" text="Profil" klasse="btn-abc" (btnClick) = "getProfil()" ></app-button>
             
         </div>

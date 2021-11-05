@@ -40,6 +40,10 @@ export class HeaderComponent implements OnInit {
     this.service.searchYoutuber(this.search)
   }
 
+  loginlogout(){
+    
+  }
+
   
 
   
