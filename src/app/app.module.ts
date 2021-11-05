@@ -21,6 +21,7 @@ import { YtprofilComponent } from './ytprofil/ytprofil.component';
 import { ChartComponent } from './chart/chart.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,9 @@ import { ChartComponent } from './chart/chart.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ChartModule
+    ChartModule,
+    
+  
     
   ],
   providers: [Service],

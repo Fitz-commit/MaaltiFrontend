@@ -14,6 +14,9 @@ export class ChartComponent implements OnInit {
   la: any[] = [];
   views: any[] = [];
   videos: any[] = [];
+  comments: any[] = [];
+  likes: any[] = [];
+  dislikes:any [] = [];
 
 
   constructor(private service: Service) { }
@@ -25,24 +28,55 @@ export class ChartComponent implements OnInit {
     this.videos.forEach(element => {
       this.la.push(element.snippet.title)
       this.views.push(element.statistics.viewCount)
+      this.comments.push(element.statistics.commentCount)
+      this.likes.push(element.statistics.likeCount)
+      this.dislikes.push(element.statistics.dislikeCount)
     });
 
     this.data = {
       labels: this.la,
       datasets: [
         {
+          label: "Views",
           data: this.views,
-          backgroundColor: '#FFCE56',
-
-        }
+          borderColor:'	#7b68ee',
+          
+          fill: false,
+        },
+        {
+          label: "Comments",
+          data: this.comments,
+          borderColor:'#FCF330',
+          fill: false,
+        },
+        {
+          label: "Likes",
+          data: this.likes,
+          borderColor:'#3CFC30',
+          fill: false,
+        },
+        {
+          label: "Dislikes",
+          data: this.dislikes,
+          borderColor:'#EB411D',
+          fill: false,
+        },
       ]
     };
 
-    
 
-
-
-
+    this.options = {
+      legend: {
+        position: "top"
+      },
+      scales: {
+        xAxes: [{
+          ticks: {
+            display: false 
+          }
+        }],
+      }
+    };
 
   }
 

@@ -3,14 +3,22 @@
 
     <div class="row gutters-sm mt-4">
         <div class="col-md-4 mb-3">
+            <h3>Profil</h3>
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex flex-column align-items-center text-center">
                         <img src="{{youtuber.profilbild}}" alt="Admin" class="rounded-circle" width="150">
-                        <div class="mt-3">
+                        <div class="mt-3 ">
                             <h4>{{youtuber.name}} </h4>
-                            <div>
-                                <p class="text-secondary mb-1">{{youtuber.description}}</p>
+                            <div class="row justify-content-center mt-3">
+                                <div class="col-sm-5">
+                                    <button type="button" (click)="doLink()" class="btn btn-dark">Hier gehts zum
+                                        Kanal</button>
+                                </div>
+                                <div class="col-sm-5">
+                                    <button type="button" (click)="doLink()" class="btn btn-abc">Creator
+                                        favorisieren</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -21,14 +29,15 @@
                     <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                         <span class="text-secondary">THEMEN</span>
                     </li>
-                    <div id="Test" *ngFor="let topics of youtuber.topics; index as i">
+                    <div id="Test" *ngFor="let topics of topics; index as i">
                         <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                            {{youtuber.topics[i]}}</li>
+                            {{topics}}</li>
                     </div>
                 </ul>
             </div>
         </div>
         <div class="col-md-8">
+            <h3>Stammdaten</h3>
             <div class="card mb-3">
                 <div class="card-body">
                     <div class="row">
@@ -72,7 +81,7 @@
                             <h6 class="mb-0">Jugendfreundlich</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            {{youtuber.madeforkids}}
+                            {{jugend}}
                         </div>
                     </div>
                     <hr>
@@ -81,38 +90,171 @@
                             <h6 class="mb-0">Zeit der Erstellung</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            {{youtuber.creationdate}}
+                            {{datum}}
                         </div>
                     </div>
                     <hr>
                 </div>
             </div>
             <h3>Kennzahlen</h3>
+            <h6 class="text-muted">Die Kennzahlen werden mit den Daten der letzten 50 Videos generiert</h6>
             <div class="row gutters-sm">
                 <div class="col-sm-6 mb-3">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h4>Allgemeine Kennzahlen</h4>
+                            <h4>Spezifische Kennzahlen</h4>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3 col-md-6">
+                                    <h6 class="mb-0">Maximale Reichweite:</h6>
+                                </div>
+                                <div class="col-sm-9 col-md-5 text-secondary">
+                                    {{youtuber.kennzahlen.maxpostreach}}
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3 col-md-6">
+                                    <h6 class="mb-0">Minimale Reichweite:</h6>
+                                </div>
+                                <div class="col-sm-9 col-md-5 text-secondary">
+                                    {{youtuber.kennzahlen.minpostreach}}
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3 col-md-6">
+                                    <h6 class="mb-0">Engagmentrate:</h6>
+                                </div>
+                                <div class="col-sm-9 col-md-5 text-secondary">
+                                    {{youtuber.kennzahlen.engagmentrate}}
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3 col-md-6">
+                                    <h6 class="mb-0">Applausrate:</h6>
+                                </div>
+                                <div class="col-sm-9 col-md-5 text-secondary">
+                                    {{youtuber.kennzahlen.applausrate}}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-6 mb-3">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h4>Spezifische Kennzahlen</h4>
+                            <h4>Allgemeine Kennzahlen</h4>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3 col-md-6">
+                                    <h6 class="mb-0">Durschnittliche Views:</h6>
+                                </div>
+                                <div class="col-sm-9 col-md-5 text-secondary">
+                                    {{youtuber.kennzahlen.averageviews}}
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3 col-md-6">
+                                    <h6 class="mb-0">Durschnittliche Kommentare:</h6>
+                                </div>
+                                <div class="col-sm-9 col-md-5 text-secondary">
+                                    {{youtuber.kennzahlen.averagecomments}}
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3 col-md-6">
+                                    <h6 class="mb-0">Durschnittliche Likes:</h6>
+                                </div>
+                                <div class="col-sm-9 col-md-5 text-secondary">
+                                    {{youtuber.kennzahlen.averagelikes}}
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3 col-md-6">
+                                    <h6 class="mb-0">Durschnittliche Dislikes :</h6>
+                                </div>
+                                <div class="col-sm-9 col-md-5 text-secondary">
+                                    {{youtuber.kennzahlen.averagedislikes}}
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
                 </div>
             </div>
-            
+
         </div>
-        <div class="">
+        <h3>Diagramme</h3>
+        <h6 class="text-muted">Daten wurden über die 50 aktuellsten Videos gesammelt</h6>
+        <div class="mb-3">
             <div class="card ">
                 <div class="card-body">
                     <app-chart type="line"></app-chart>
                 </div>
             </div>
         </div>
+        <h3>Video..</h3>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col borderright">
+                        <div class="col-sm-3 col-md-12">
+                            <h6>mit den meisten Kommentaren </h6>
+                            <img class="img-fluid card-img-top mb-3"
+                                [src]="youtuber.kennzahlen.mostcomments.snippet.thumbnails.medium.url" alt="..."
+                                style="max-height: 180px; max-width: 320px ;">
+                            <p>{{youtuber.kennzahlen.mostcomments.snippet.title}}</p>
+                            <p class="text-muted" style="font-size: 15px;"> Anzahl der Kommentare:
+                                {{youtuber.kennzahlen.mostcomments.statistics.commentCount}}</p>
+                        </div>
+
+                    </div>
+                    <div class="col borderright">
+                        <div class="col-sm-3 col-md-12">
+                            <h6>mit den meisten Likes </h6>
+                            <img class="img-fluid card-img-top mb-3"
+                                [src]="youtuber.kennzahlen.mostlikes.snippet.thumbnails.medium.url" alt="..."
+                                style="max-height: 180px; max-width: 320px ;">
+                            <p>{{youtuber.kennzahlen.mostlikes.snippet.title}}</p>
+                            <p class="text-muted" style="font-size: 15px;"> Anzahl der Likes:
+                                {{youtuber.kennzahlen.mostlikes.statistics.likeCount}}</p>
+                        </div>
+
+                    </div>
+                    <div class="col borderright">
+                        <div class="col-sm-3 col-md-12">
+                            <h6>mit den meisten Disikes </h6>
+                            <img class="img-fluid card-img-top mb-3"
+                                [src]="youtuber.kennzahlen.mostdislikes.snippet.thumbnails.medium.url" alt="..."
+                                style="max-height: 180px; max-width: 320px ;">
+                            <p>{{youtuber.kennzahlen.mostdislikes.snippet.title}}</p>
+                            <p class="text-muted" style="font-size: 15px;"> Anzahl der Dislikes:
+                                {{youtuber.kennzahlen.mostdislikes.statistics.dislikeCount}}</p>
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <div class="col-sm-3 col-md-12">
+                            <h6>mit den meisten Views </h6>
+                            <img class="img-fluid card-img-top mb-3"
+                                [src]="youtuber.kennzahlen.mostviews.snippet.thumbnails.medium.url" alt="..."
+                                style="max-height: 180px; max-width: 320px ;">
+                            <p>{{youtuber.kennzahlen.mostviews.snippet.title}}</p>
+                            <p class="text-muted" style="font-size: 15px;"> Anzahl der Views:
+                                {{youtuber.kennzahlen.mostviews.statistics.viewCount}}</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
