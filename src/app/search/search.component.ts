@@ -18,8 +18,8 @@ export class SearchComponent implements OnInit {
   }
 
   generateYTProfil(id:string){
-    var URL= "https://maalti.herokuapp.com/api/v1.0/channellistid?id=" + id
-    this.service.getYTProfil(URL);
+    
+    this.service.getYTProfil(id);
   
   }
 

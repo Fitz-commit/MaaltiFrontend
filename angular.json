@@ -16,7 +16,13 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
+          
           "options": {
+            "allowedCommonJsDependencies": [
+              "rxjs-compat",
+              "angular2-chartjs"
+           ],
+
             "outputPath": "dist/MaaltiSinglePage",
             "index": "src/index.html",
             "main": "src/main.ts",

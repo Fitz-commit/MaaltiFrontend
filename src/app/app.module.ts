@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
+import { ChartModule } from 'angular2-chartjs';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ButtonComponent } from './button/button.component';
@@ -16,6 +18,7 @@ import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PwforgottenComponent } from './pwforgotten/pwforgotten.component';
 import { YtprofilComponent } from './ytprofil/ytprofil.component';
+import { ChartComponent } from './chart/chart.component';
 
 
 @NgModule({
@@ -30,12 +33,15 @@ import { YtprofilComponent } from './ytprofil/ytprofil.component';
     SearchComponent,
     PwforgottenComponent,
     YtprofilComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ChartModule
+    
   ],
   providers: [Service],
   bootstrap: [AppComponent]

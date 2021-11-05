@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(private service:Service) { }
-
+  //ngonchanges?
 
   ngOnInit(): void {
     if(document.cookie == ""){
