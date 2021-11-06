@@ -1,24 +1,22 @@
 <div class="container">
-    <h1>Profil</h1>
+    <h1 class="my-3">Profil</h1>
     <h5 class="text-muted">Email: {{email}}</h5>
 
     <h4 class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
         Deine Favoriten:
     </h4>
 
-    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-4">
-
+    <div class="row row-cols-1 row-cols-md-4 g-4">
         <div id="Test" *ngFor="let favoriten of favoriten; index as i">
-            <div class="col">
-                <div class="card mb-3" style="min-width: 180px; max-width: 540px">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img class="img-fluid rounded-start card-img-top" [src]="favoriten.profilbild" alt="..."
-                                style="max-height: 144px;">
+            <div class="col col-12 d-flex justify-content-center">
+                <div class="card " style="width: 200px; height: 340px; ">
+                    <div class="row">
+                        <div class="">
+                            <img class="img-fluid rounded-start card-img-top" [src]="favoriten.profilbild" alt="...">
                         </div>
-                        <div class="col-md-8" style="max-height: 144px;">
+                        <div>
                             <div class="card-body">
-                                <div class="cold-md-9">
+                                <div class="">
                                     <h5 class="card-title">{{favoriten.name}}</h5>
                                 </div>
                                 <button type="button" (click)="generateYTProfil(favoriten.creatorid)" class="btn btn-dark mt-3 me-3">View</button>

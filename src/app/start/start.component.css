@@ -1,0 +1,13 @@
+.container-fluid{
+    font-family: "Montserrat";
+    height: 100vh;
+
+    color: rgb(255, 255, 255);
+    
+    
+}
+
+img{
+    width: 150px;
+    height: 150px;
+}

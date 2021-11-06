@@ -193,6 +193,7 @@ export class Service {
         var response = await rawResponse.json();
         
         this.userprofil = response
+        
         this.router.navigate(['Profil']);
         
 

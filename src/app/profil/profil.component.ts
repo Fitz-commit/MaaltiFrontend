@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Service } from '../data/service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ProfilComponent implements OnInit {
   email:any;
   favoriten:any[]=[];
 
-  constructor(private service:Service) { }
+  constructor(private service:Service,private router: Router) { }
 
   ngOnInit(): void {
     
@@ -32,6 +33,7 @@ export class ProfilComponent implements OnInit {
   deleteFavoriten(creatorid:string){
     this.service.deleteFavorit(creatorid)
     
+  
     
   }
 }

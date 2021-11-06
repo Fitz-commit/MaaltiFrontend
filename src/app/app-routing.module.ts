@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { PwforgottenComponent } from './pwforgotten/pwforgotten.component';
 import { RouterModule, Routes } from '@angular/router';
 import { YtprofilComponent } from './ytprofil/ytprofil.component';
+import { StartComponent } from './start/start.component';
 
 const routes: Routes = [
   { path: 'Login', component: LoginComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'Profil', component: ProfilComponent},
   { path: 'YTProfil', component: YtprofilComponent},
   { path: 'Password', component: PwforgottenComponent},
-  { path: '', component: HomeComponent},
+  { path: 'Home', component: HomeComponent},
+  { path: '', component: StartComponent},
 ];
 
 

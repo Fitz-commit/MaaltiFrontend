@@ -1,0 +1,40 @@
+<body class="background" [ngStyle]="{backgroundImage:'url(assets/phone-gb7fbda5f8_1920.jpg)'}">
+    <div class="container-fluid">
+
+
+        <div class="text-center mt-0 pt-3">
+            <h1><strong>WelcomeToMaalti </strong></h1>
+            <h4 class="">Wähle die Platform auf der du Content-Creator entdecken möchtest.</h4>
+        </div>
+
+
+        <div class="d-flex justify-content-center flex-wrap align-items-center">
+            <div class="row row-cols-sm-1  row-cols-md-2 my-5">
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="card mb-2 text-center " style="width: 18rem;">
+                        <div class="card-body ">
+                            <div>
+                                <a  (click) ="twitch()"><img src="assets\twitch.png"
+                                        style="width: 200px; height: auto;"></a>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="card text-center " style="width: 18rem;">
+                        <div class="card-body">
+
+                            <div>
+                                <a [routerLink] ="['/Home']"><img src="assets\youtube.png"
+                                        style="width: 200px; height: auto;"></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>

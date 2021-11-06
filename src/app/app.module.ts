@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PwforgottenComponent } from './pwforgotten/pwforgotten.component';
 import { YtprofilComponent } from './ytprofil/ytprofil.component';
 import { ChartComponent } from './chart/chart.component';
+import { StartComponent } from './start/start.component';
 
 
 
@@ -35,6 +36,7 @@ import { ChartComponent } from './chart/chart.component';
     PwforgottenComponent,
     YtprofilComponent,
     ChartComponent,
+    StartComponent,
   ],
   imports: [
     BrowserModule,
