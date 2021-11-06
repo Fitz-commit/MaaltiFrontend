@@ -1,1 +1,35 @@
-<p>profil works!</p>
+<div class="container">
+    <h1>Profil</h1>
+    <h5 class="text-muted">Email: {{email}}</h5>
+
+    <h4 class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+        Deine Favoriten:
+    </h4>
+
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 g-4">
+
+        <div id="Test" *ngFor="let favoriten of favoriten; index as i">
+            <div class="col">
+                <div class="card mb-3" style="min-width: 180px; max-width: 540px">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img class="img-fluid rounded-start card-img-top" [src]="favoriten.profilbild" alt="..."
+                                style="max-height: 144px;">
+                        </div>
+                        <div class="col-md-8" style="max-height: 144px;">
+                            <div class="card-body">
+                                <div class="cold-md-9">
+                                    <h5 class="card-title">{{favoriten.name}}</h5>
+                                </div>
+                                <button type="button" (click)="generateYTProfil(favoriten.creatorid)" class="btn btn-dark mt-3 me-3">View</button>
+                                <button type="button"  (click)="deleteFavoriten(favoriten.creatorid)" class="btn btn-danger mt-3">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

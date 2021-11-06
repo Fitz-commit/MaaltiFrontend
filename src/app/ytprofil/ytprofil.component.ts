@@ -35,14 +35,18 @@ export class YtprofilComponent implements OnInit {
 
 
     //Das Hier muss unbedingt weg
-    const response = await fetch("assets/channellistid.json");
-    this.youtuber = await response.json();
+    
 
   }
 
   doLink() {
     window.location.href = this.youtuber.customURL;
 
+  }
+
+  favorisieren(){
+    var cookie = document.cookie
+    this.service.favoriteCreator(this.youtuber.creatorid, cookie,this.youtuber.name,this.youtuber.profilbild)
   }
 
 

@@ -17,23 +17,24 @@ export class HeaderComponent implements OnInit {
   
 
 
-  constructor(private service:Service) { }
+  constructor(private service:Service,private router: Router) { }
   //ngonchanges?
 
   ngOnInit(): void {
-    if(document.cookie == ""){
-      this.loginbtn = "Anmelden"
-    }
-    if(document.cookie != ""){
-      this.loginbtn = "Abmelden"
-    }
+    
   }
 
   getProfil(){
-    if(document.cookie == ""){
-      alert('Sie sind nicht eingeloggt!')
+    debugger
+    const alles = document.cookie
+    const cookie = document.cookie.substring(document.cookie.indexOf("=") + 1)
+    if (cookie ==""){
+      alert("Bitte log dich zuerst ein !")
       return
     }
+
+    this.service.getUserProfil(cookie);
+    
   }
 
   sendName(){
@@ -41,7 +42,14 @@ export class HeaderComponent implements OnInit {
   }
 
   loginlogout(){
-    
+    debugger
+    const cookie = document.cookie.substring(document.cookie.indexOf("=") + 1)
+    console.log(cookie)
+    if(cookie == ""){
+      this.router.navigate(['Login']);
+    }else{
+      this.service.logoutUser(cookie)
+    }
   }
 
   

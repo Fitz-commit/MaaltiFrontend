@@ -19,10 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(private service:Service, private router:Router) { }
 
   ngOnInit(): void {
-    if(document.cookie != ""){
-      this.ausloggen()
-
-    }
+    
     
   }
 
@@ -50,9 +47,6 @@ export class LoginComponent implements OnInit {
 
   }
 
-  ausloggen(){
   
-
-  }
 
 }
