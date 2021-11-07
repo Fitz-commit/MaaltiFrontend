@@ -1,16 +1,23 @@
 
+h1{
+    text-shadow: 2px 2px #000000;
+}
 
+h3{
+    text-shadow: 1px 2px #000000;
+}
 
 
 .test{
     
         font-family: "Encode Sans";
-        font-size: 23px;
+        font-size: 20px;
         height: 87vh;
-        color: rgb(252, 252, 252);
-        background-image: url(src\assets\pexels-irina-iriser-1420019.jpg);
+        color: rgb(255, 255, 255);
+        background-image: url(src\assets\4a94268541d7a0ed95a8be5138e8a288.jpg);
         background-size: 100% auto;
-        text-shadow: 2px 2px 0px #120f1d;
+        
+        
         
 }
 
