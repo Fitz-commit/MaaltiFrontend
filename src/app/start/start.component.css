@@ -1,10 +1,23 @@
 .container-fluid{
-    font-family: "Montserrat";
+    
     height: 100vh;
-
+    background-image: url(src\assets\pexels-felix-mittermeier-956999.jpg);
+    background-size: 100% 100%;
     color: rgb(255, 255, 255);
     
     
+}
+
+.background h1{
+    font-family: "Encode Sans";
+    font-size: 70px;
+    font-weight: 900;
+}
+
+.background h4{
+    font-family: "Encode Sans";
+    font-size: 30px;
+    font-weight: 500;
 }
 
 img{

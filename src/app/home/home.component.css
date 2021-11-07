@@ -1,2 +1,24 @@
 
 
+
+
+.test{
+    
+        font-family: "Encode Sans";
+        font-size: 23px;
+        height: 100%;
+        color: rgb(252, 252, 252);
+        background-image: url(src\assets\pexels-irina-iriser-1420019.jpg);
+        background-size: 100% 100%;
+        text-shadow: 2px 2px 0px #120f1d;
+        
+}
+
+@media only screen and (max-width: 500px) {
+    .test{
+        font-size: 15px;
+    }
+    
+}
+
+
