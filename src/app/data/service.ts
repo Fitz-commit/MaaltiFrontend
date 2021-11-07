@@ -18,6 +18,9 @@ export class Service {
     youtuberpreview: any;
     youtuber: any;
     userprofil:any;
+    isProfilVisible = false;
+    isSendNameVisible = false;
+    isSearchVisible = false;
 
 
     constructor(private http: HttpClient, private router: Router) { }
@@ -38,17 +41,19 @@ export class Service {
 
     }
 
-    async getYTProfil(id: string) {
+    async getYTProfil(id: string, order:String) {
 
         //const response = await fetch("assets/channellistid.json");
         //this.youtuber = await response.json()
 
 
 
-        var apiURL= "https://maalti.herokuapp.com/api/v1.0/channellistid?id=" + id
+        var apiURL= "https://maalti.herokuapp.com/api/v1.0/channellistid?id=" + id +"&order=" +order;
+        console.log(apiURL)
         const rawResponse = await fetch(apiURL);
 
         this.youtuber = await rawResponse.json();
+        console.log(this.youtuber)
 
 
         this.router.navigate(['YTProfil']);
@@ -94,7 +99,7 @@ export class Service {
 
         document.cookie = email + "=" + cookie;
         alert("Sie sind eingeloggt")
-       
+       this.isProfilVisible =true;
         this.router.navigate(['']);
 
 
@@ -182,6 +187,7 @@ export class Service {
 
 
     async getUserProfil(cookie: string) {
+        
         if(cookie == " "){
             alert("Bitte melden Sie sich zuerst an !")
             return

@@ -27,13 +27,14 @@ export class ProfilComponent implements OnInit {
 
 
   generateYTProfil(creatorid:string){
-    this.service.getYTProfil(creatorid);
+    this.service.getYTProfil(creatorid, "date");
   }
 
   deleteFavoriten(creatorid:string){
+    
     this.service.deleteFavorit(creatorid)
     
-  
+    
     
   }
 }

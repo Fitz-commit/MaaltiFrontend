@@ -5,13 +5,13 @@
                 <img src="assets\maalti_logo-s-lila.png">
             </a>
             <div class="col-12 col-lg-auto me-lg-2 mb-3 mb-lg-0 me-lg-3">
-                <input type="text" class="form-control" placeholder="Suche..." [(ngModel)]="search">
+                <input type="text" class="form-control" *ngIf="this.service.isSearchVisible" placeholder="Suche..." [(ngModel)]="search">
             </div>
 
-            <app-button id="searchbtn" text="Suche" klasse="btn-outline-light" (btnClick)="sendName()"></app-button>
+            <app-button id="searchbtn" text="Suche" *ngIf="this.service.isSendNameVisible" klasse="btn-outline-light" (btnClick)="sendName()"></app-button>
             <app-button text="Ab-/Anmelden" id="loginbtn" klasse="btn-outline-light"
                 (btnClick)="loginlogout()"></app-button>
-            <app-button id="profilbtn" text="Profil" klasse="btn-abc" (btnClick)="getProfil()"></app-button>
+            <app-button id="profilbtn" *ngIf="this.service.isProfilVisible" text="Profil" klasse="btn-abc" (btnClick)="getProfil()"></app-button>
 
         </div>
     </div>

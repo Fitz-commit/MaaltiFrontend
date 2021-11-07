@@ -9,6 +9,9 @@ import { Service } from '../data/service';
 export class SearchComponent implements OnInit {
 
   previews:any;
+  relevance = "relevance"
+  date = "date"
+  viewCount ="viewCount"
 
   constructor(private service:Service) { }
 
@@ -17,9 +20,10 @@ export class SearchComponent implements OnInit {
 
   }
 
-  generateYTProfil(id:string){
+  generateYTProfil(id:string, order:String){
+    console.log(order)
     
-    this.service.getYTProfil(id);
+    this.service.getYTProfil(id,order);
   
   }
 

@@ -15,17 +15,18 @@ export class HeaderComponent implements OnInit {
   loginbtn ="";
   
   
+  
 
 
-  constructor(private service:Service,private router: Router) { }
-  //ngonchanges?
+  constructor(public service:Service,private router: Router) { }
+  
 
   ngOnInit(): void {
     
   }
 
   getProfil(){
-    debugger
+    
     const alles = document.cookie
     const cookie = document.cookie.substring(document.cookie.indexOf("=") + 1)
     if (cookie ==""){
