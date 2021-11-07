@@ -25,6 +25,8 @@ export class Service {
 
     constructor(private http: HttpClient, private router: Router) { }
 
+    
+
     async searchYoutuber(name: string) {
 
         var apiURL = "https://maalti.herokuapp.com/api/v1.0/searchlistname?name=" + name
@@ -98,8 +100,9 @@ export class Service {
         }
 
         document.cookie = email + "=" + cookie;
+        this.isProfilVisible = true;
         alert("Sie sind eingeloggt")
-       this.isProfilVisible =true;
+       
         this.router.navigate(['']);
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Service } from '../data/service';
 
 @Component({
   selector: 'app-start',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./start.component.css']
 })
 export class StartComponent implements OnInit {
+  
 
-  constructor() { }
+  constructor(private service:Service) { }
 
   ngOnInit(): void {
+    if(document.cookie.substring(document.cookie.indexOf("=") + 1) == ""){
+      this.service.isProfilVisible = false;
+    }else{
+      this.service.isProfilVisible = true;
+    }
   }
 
   twitch(){
